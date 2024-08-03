@@ -13,6 +13,4 @@ FOUNDATION_EXPORT double APIIntegrationVersionNumber;
 //! Project version string for APIIntegration.
 FOUNDATION_EXPORT const unsigned char APIIntegrationVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <APIIntegration/PublicHeader.h>
-
-
+#import <APIIntegration/APIWrapper.h>
