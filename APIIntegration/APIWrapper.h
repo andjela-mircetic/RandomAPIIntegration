@@ -14,6 +14,7 @@
 extern "C" {
 #endif
 
+void initializeAPI();
 void generateIntegers(int n, int min, int max, void (^completion)(NSArray *result));
 void generateIntegerSequences(int n, int length, int min, int max, void (^completion)(NSArray *result));
 void generateDecimalFractions(int n, int decimalPlaces, void (^completion)(NSArray *result));
