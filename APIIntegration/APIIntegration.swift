@@ -20,7 +20,7 @@ public struct RandomResult<T: Decodable>: Decodable {
 }
 
 @objc public class RandomOrgAPI: NSObject {
-    private let apiKey = "AndjelaNewKey"
+    private let apiKey = "a3429d40-d454-4403-a78d-e9a8d008a3e8"
     private let baseURL = "https://api.random.org/json-rpc/4/invoke"
     
     private func makeRequest<T: Decodable>(method: String, params: [String: Any], completion: @escaping (T?) -> Void) {
@@ -35,6 +35,7 @@ public struct RandomResult<T: Decodable>: Decodable {
         
         guard let url = URL(string: baseURL),
               let httpBody = try? JSONSerialization.data(withJSONObject: body, options: []) else {
+            print("Error creating request body")
             completion(nil)
             return
         }
@@ -46,13 +47,17 @@ public struct RandomResult<T: Decodable>: Decodable {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
+                print("No data received")
                 completion(nil)
                 return
             }
             
+            print("Raw response data: \(String(data: data, encoding: .utf8) ?? "Invalid data")")
+            
             if let response = try? JSONDecoder().decode(RandomOrgResponse<RandomData<T>>.self, from: data) {
                 completion(response.result.random.data)
             } else {
+                print("Error decoding response")
                 completion(nil)
             }
         }.resume()

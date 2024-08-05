@@ -10,7 +10,7 @@
 		9E55FD132C5E4BF6005B919F /* APIIntegration.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9E55FD122C5E4BF6005B919F /* APIIntegration.docc */; };
 		9E55FD142C5E4BF6005B919F /* APIIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E55FD112C5E4BF6005B919F /* APIIntegration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E55FD1B2C5E4C86005B919F /* APIIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E55FD1A2C5E4C86005B919F /* APIIntegration.swift */; };
-		9E55FD1D2C5E4DFB005B919F /* APIWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E55FD1C2C5E4DFB005B919F /* APIWrapper.h */; };
+		9E55FD1D2C5E4DFB005B919F /* APIWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E55FD1C2C5E4DFB005B919F /* APIWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E55FD232C5E5417005B919F /* APIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E55FD222C5E5417005B919F /* APIWrapper.m */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +53,7 @@
 		9E55FD102C5E4BF6005B919F /* APIIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				9E8204442C601AFE000022C1 /* CustomFrameworks */,
 				9E55FD112C5E4BF6005B919F /* APIIntegration.h */,
 				9E55FD1C2C5E4DFB005B919F /* APIWrapper.h */,
 				9E55FD222C5E5417005B919F /* APIWrapper.m */,
@@ -60,6 +61,13 @@
 				9E55FD1A2C5E4C86005B919F /* APIIntegration.swift */,
 			);
 			path = APIIntegration;
+			sourceTree = "<group>";
+		};
+		9E8204442C601AFE000022C1 /* CustomFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomFrameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +200,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/../CustomFrameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -206,6 +215,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /Users/andjelamircetic/Desktop/APIIntegration/APIIntegration/APIIntegration/APIWrapper.h;
+				"INSTALL_PATH[sdk=*]" = "$(SRCROOT)/../CustomFrameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -257,6 +268,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/../CustomFrameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -265,6 +277,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /Users/andjelamircetic/Desktop/APIIntegration/APIIntegration/APIIntegration/APIWrapper.h;
+				"INSTALL_PATH[sdk=*]" = "$(SRCROOT)/../CustomFrameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -288,6 +302,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				"INSTALL_PATH[sdk=*]" = "$(SRCROOT)/../CustomFrameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
@@ -327,6 +342,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				"INSTALL_PATH[sdk=*]" = "$(SRCROOT)/../CustomFrameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
